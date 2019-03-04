@@ -1,53 +1,35 @@
 cmake_minimum_required(VERSION 3.5)
 
+
 project(engine)
 
-## Building
-# create fareweller library
+# Create the main executable
+# add the header files also so that the IDE knows they exist
+# in the source tree
 add_library(engine_lib
 	include/engine/engine.hpp
- 	src/engine.cpp
- )
+	src/engine.cpp
+	)
 
-# setup include directories
-target_include_directories(engine_lib PUBLIC
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
- 	$<INSTALL_INTERFACE:include>
-)
-
-# setup export preprocessor definitions
-#if(BUILD_SHARED_LIBS)
-#    target_compile_definitions(engine_lib PRIVATE ENGINE_EXPORTS)
-#    target_compile_definitions(engine_lib INTERFACE ENGINE_IMPORTS)
-#endif()
-
-## Testing
-#add_executable(fareweller_test 	tests/fareweller_test.cpp)
-#target_link_libraries(fareweller_test fareweller_lib)
-#add_test(fareweller_test fareweller_test)
+# add the include dir as a public include directory
+# will be inherited by dependent targets
+target_include_directories(engine_lib PUBLIC include)
+# add the include directory src which will only be visible by
+# sample_exe
+target_include_directories(engine_lib PRIVATE src)
 target_link_libraries(engine_lib)
-target_link_libraries(engine_lib "${TORCH_LIBRARIES}")
+
+ if(BUILD_SHARED_LIBS)
+	 target_compile_definitions(engine_lib PRIVATE ENGINE_EXPORTS)
+	 target_compile_definitions(engine_lib INTERFACE ENGINE_IMPORTS)
+endif()
 
 
-## Installing
-# add installation for target farweller
+## create test for greeter
+#add_executable(greeter_test
+#	tests/greeter_test.cpp
+#)
 
-#install(TARGETS engine_lib EXPORT engine_export
-		RUNTIME DESTINATION bin
-		ARCHIVE DESTINATION lib
-    	LIBRARY DESTINATION lib
-		INCLUDES DESTINATION include
-)
+#target_link_libraries(greeter_test	greeter_lib)
 
-# copy public include files
-install(FILES
-	include/engine.hpp
-	DESTINATION include)
-
-
-# create export file which can be imported by other cmake projects
-install(EXPORT engine_export
-	NAMESPACE sample::
-	DESTINATION lib/cmake/engine_lib
-)
-
+#add_test(greeter_test greeter_test)
