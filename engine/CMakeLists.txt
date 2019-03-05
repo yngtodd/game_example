@@ -14,28 +14,31 @@ target_include_directories(engine_lib PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
  	$<INSTALL_INTERFACE:include>
 )
+
 # setup export preprocessor definitions
-if(BUILD_SHARED_LIBS)
-    target_compile_definitions(engine_lib PRIVATE ENGINE_EXPORTS)
-    target_compile_definitions(engine_lib INTERFACE ENGINE_IMPORTS)
-endif()
+#if(BUILD_SHARED_LIBS)
+#    target_compile_definitions(engine_lib PRIVATE ENGINE_EXPORTS)
+#    target_compile_definitions(engine_lib INTERFACE ENGINE_IMPORTS)
+#endif()
 
 ## Testing
 #add_executable(fareweller_test 	tests/fareweller_test.cpp)
 #target_link_libraries(fareweller_test fareweller_lib)
 #add_test(fareweller_test fareweller_test)
 target_link_libraries(engine_lib)
+target_link_libraries(engine_lib "${TORCH_LIBRARIES}")
 
 
 ## Installing
 # add installation for target farweller
 
-install(TARGETS engine_lib EXPORT engine_export
+#install(TARGETS engine_lib EXPORT engine_export
 		RUNTIME DESTINATION bin
 		ARCHIVE DESTINATION lib
-		LIBRARY DESTINATION lib
+    	LIBRARY DESTINATION lib
 		INCLUDES DESTINATION include
 )
+
 # copy public include files
 install(FILES
 	include/engine.hpp
