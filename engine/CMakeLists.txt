@@ -38,6 +38,7 @@ install(TARGETS engine_lib EXPORT engine_export
 )
 # copy public include files
 install(FILES
+    include/config.h
 	include/engine.hpp
 	DESTINATION include)
 
