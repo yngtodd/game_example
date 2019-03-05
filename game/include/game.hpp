@@ -1,9 +1,11 @@
 #ifndef _GAME_HPP_
 #define _GAME_HPP_
 
+#include <game/config.h>
+
 namespace game {
 
-  void print_message();
+  GAME_API void print_message();
 
 }
 

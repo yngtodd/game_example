@@ -5,6 +5,7 @@ project(engine)
 ## Building
 # create fareweller library
 add_library(engine_lib
+    include/config.h
 	include/engine.hpp
  	src/engine.cpp
  )

@@ -1,9 +1,11 @@
 #ifndef _ENGINE_HPP_
 #define _ENGINE_HPP_
 
+#include <engine/config.h>
+
 namespace engine {
 
-  void print_message();
+  ENGINE_API void print_message();
 
 }
 
