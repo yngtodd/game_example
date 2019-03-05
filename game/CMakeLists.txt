@@ -7,7 +7,6 @@ project(game)
 # add the header files also so that the IDE knows they exist
 # in the source tree
 add_library(game_lib
-    include/game/config.h
 	include/game/game.hpp
 	src/game.cpp
 	)

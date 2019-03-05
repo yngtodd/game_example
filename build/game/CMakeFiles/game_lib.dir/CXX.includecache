@@ -6,10 +6,10 @@
 
 #IncludeRegexTransform: 
 
-../engine/include/engine/engine.hpp
+../game/include/game/game.hpp
 
-/Users/yngtodd/src/sandbox/tmp/game_example/engine/src/engine.cpp
-engine/engine.hpp
+/Users/yngtodd/src/sandbox/tmp/game_example/game/src/game.cpp
+game/game.hpp
 -
 iostream
 -

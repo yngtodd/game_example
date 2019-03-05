@@ -8,9 +8,11 @@
 
 ../engine/include/engine/engine.hpp
 
-/Users/yngtodd/src/sandbox/tmp/game_example/engine/src/engine.cpp
+../game/include/game/game.hpp
+
+/Users/yngtodd/src/sandbox/tmp/game_example/runner/application.cpp
 engine/engine.hpp
 -
-iostream
+game/game.hpp
 -
 

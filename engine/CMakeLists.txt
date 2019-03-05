@@ -5,7 +5,6 @@ project(engine)
 ## Building
 # create fareweller library
 add_library(engine_lib
-    include/engine/config.h
 	include/engine/engine.hpp
  	src/engine.cpp
  )
@@ -39,7 +38,6 @@ install(TARGETS engine_lib EXPORT engine_export
 )
 # copy public include files
 install(FILES
-    include/config.h
 	include/engine.hpp
 	DESTINATION include)
 
