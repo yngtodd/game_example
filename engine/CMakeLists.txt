@@ -5,8 +5,8 @@ project(engine)
 ## Building
 # create fareweller library
 add_library(engine_lib
-    include/config.h
-	include/engine.hpp
+    include/engine/config.h
+	include/engine/engine.hpp
  	src/engine.cpp
  )
 
@@ -25,6 +25,7 @@ endif()
 #add_executable(fareweller_test 	tests/fareweller_test.cpp)
 #target_link_libraries(fareweller_test fareweller_lib)
 #add_test(fareweller_test fareweller_test)
+target_link_libraries(engine_lib)
 
 
 ## Installing

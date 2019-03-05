@@ -7,8 +7,8 @@ project(game)
 # add the header files also so that the IDE knows they exist
 # in the source tree
 add_library(game_lib
-    include/config.h
-	include/game.hpp
+    include/game/config.h
+	include/game/game.hpp
 	src/game.cpp
 	)
 
@@ -18,6 +18,7 @@ target_include_directories(game_lib PUBLIC include)
 # add the include directory src which will only be visible by
 # sample_exe
 target_include_directories(game_lib PRIVATE src)
+target_link_libraries(game_lib)
 
  if(BUILD_SHARED_LIBS)
      target_compile_definitions(game_lib PRIVATE GAME_EXPORTS)
