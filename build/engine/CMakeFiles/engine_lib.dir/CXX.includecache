@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../engine/include/engine/config.h
+
+../engine/include/engine/engine.hpp
+engine/config.h
+-
+
+/Users/yngtodd/src/sandbox/tmp/game_example/engine/src/engine.cpp
+engine/engine.hpp
+-
+iostream
+-
+
