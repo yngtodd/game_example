@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include <engine/engine.hpp>
-#include <game/game.hpp>
+#include <engine.hpp>
+#include <game.hpp>
 #include <torch/torch.h>
 
 int main()

@@ -7,7 +7,7 @@ project(engine)
 # add the header files also so that the IDE knows they exist
 # in the source tree
 add_library(engine_lib
-	include/engine/engine.hpp
+	include/engine.hpp
 	src/engine.cpp
 	)
 

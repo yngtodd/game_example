@@ -4,8 +4,6 @@ project(mygame)
 
 find_package(Torch REQUIRED)
 
-include_directories("${TORCH_INCLUDE}")
-
 # enables cmake testing
 enable_testing()
 

@@ -1,6 +1,5 @@
-#include <engine/engine.hpp>
+#include <engine.hpp>
 #include <iostream>
-#include <torch/torch.h>
 
 namespace engine {
 
