@@ -18,6 +18,7 @@ target_include_directories(engine_lib PUBLIC include)
 # sample_exe
 target_include_directories(engine_lib PRIVATE src)
 target_link_libraries(engine_lib)
+set_property(TARGET engine_lib PROPERTY CXX_STANDARD 11)
 
  if(BUILD_SHARED_LIBS)
 	 target_compile_definitions(engine_lib PRIVATE ENGINE_EXPORTS)
